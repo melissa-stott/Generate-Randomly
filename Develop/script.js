@@ -1,6 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
+//This function gathers all user input to generate the password
 function generatePassword(length, characters){
   var results = "";
   var charLen = characters.length;
@@ -12,6 +13,8 @@ function generatePassword(length, characters){
 }
 
 // Write password to the #password input
+
+//This function contains all password character options, and if statements to determine what will be included in the random password.
 function writePassword() {
 
   var lowerArr = "abcdefghijklmnopqrstuvwxyz";
@@ -48,8 +51,6 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
   passwordText.value = password;
 }
-
-// wrvar result = charArr += specArr.charAt(Math.floor(Math.random() * 10))
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
