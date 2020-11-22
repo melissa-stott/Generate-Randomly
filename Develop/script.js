@@ -1,12 +1,5 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-var lowerArr = "abcdefghijklmnopqrstuvwxyz";
-var upperArr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numberArr = "0123456789";
-var specArr = "!@#$%^&*\"\()\\\'"
-
-console.log("this is my arrays " + lowerArr + upperArr + numberArr + specArr)
-
 
 function generatePassword(length, characters){
   var results = "";
@@ -18,15 +11,38 @@ function generatePassword(length, characters){
   return results;
 }
 
-console.log(generatePassword(12, lowerArr + numberArr + specArr));
-
 // Write password to the #password input
 function writePassword() {
+
+  var lowerArr = "abcdefghijklmnopqrstuvwxyz";
+  var upperArr = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numberArr = "0123456789";
+  var specArr = "!@#$%^&*\"\()\\\'"
+
   var length = prompt("Enter password length");
   if(length < 8 || length > 128){
-    return ('Please choose a value between 8 & 128')
+    alert ('Please choose a value between 8 & 128');
+    return;
   }
-  var password = generatePassword(length, lowerArr);
+  
+  var charList = "";
+  if(confirm("Do you want to include lower case letters?")){
+    charList += lowerArr;
+  }
+
+  if(confirm("Do you want to include upper case letters?")){
+    charList += upperArr;
+  }
+
+  if(confirm("Do you want to include numbers?")){
+    charList += numberArr;
+  }
+
+  if(confirm("Do you want to include special characters?")){
+    charList += specArr;
+  }
+
+  var password = generatePassword(length, charList);
 
 
   var passwordText = document.querySelector("#password");
