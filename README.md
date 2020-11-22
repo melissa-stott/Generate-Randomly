@@ -1,1 +1,2 @@
 # Generate-Randomly
+This project was created to generate a random password based off of the user input and preferences. It allows the user to choose what characters they want, and the length given that it fits between the given parameters.
